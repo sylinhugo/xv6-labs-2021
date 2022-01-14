@@ -281,7 +281,8 @@ QEMUGDB = $(shell if $(QEMU) -help | grep -q '^-gdb'; \
 	then echo "-gdb tcp::$(GDBPORT)"; \
 	else echo "-s -p $(GDBPORT)"; fi)
 ifndef CPUS
-CPUS := 3
+# Originally CPUS is seted to 3; I changed it to 1 for not over-heating 
+CPUS := 1
 endif
 ifeq ($(LAB),fs)
 CPUS := 1
